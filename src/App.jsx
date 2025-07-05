@@ -226,7 +226,7 @@ const App = () => {
               { 
                 title: 'Voice Recorder App', 
                 icon: <FaMicrophone className="text-6xl" />,
-                description: 'Lightweight and user-friendly voice recording application with playback and file organization features. Achieved 100+ downloads within the first month.',
+                description: 'Lightweight and user-friendly voice recording application with playback and file organization features.',
                 tags: ['Flutter', 'Audio', 'UI/UX']
               },
               { 
