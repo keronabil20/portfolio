@@ -197,65 +197,51 @@ const App = () => {
       </section>
 
       {/* Projects Section */}
-      <section ref={sectionRefs.work} id="work" className="py-16 md:py-24 bg-light">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="section-title text-3xl md:text-4xl font-bold mb-4 relative pb-4">
-              Featured Work
-              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-secondary to-accent rounded-full"></span>
-            </h2>
-            <p className="text-xl text-secondary">
-              Explore my portfolio of mobile applications built with Flutter that showcase my technical skills and creative problem-solving abilities
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              { 
-                title: 'Restaurant Reviews App', 
-                icon: <FaUtensils className="text-6xl" />,
-                description: 'Cross-platform app using Flutter with Google Gemini, Firebase, Google Maps, and custom ML model achieving 95% accuracy in personalized recommendations. Ranked top 5 among 30+ final-year projects.',
-                tags: ['Flutter', 'Firebase', 'ML']
-              },
-              { 
-                title: 'Fitness Application', 
-                icon: <FaDumbbell className="text-6xl" />,
-                description: 'Fitness tracking app with real-time data visualization and goal tracking. Achieved 30% increase in daily user engagement during testing with focus groups.',
-                tags: ['Flutter', 'Data Viz', 'Tracking']
-              },
-              { 
-                title: 'Voice Recorder App', 
-                icon: <FaMicrophone className="text-6xl" />,
-                description: 'Lightweight and user-friendly voice recording application with playback and file organization features. Achieved 100+ downloads within the first month.',
-                tags: ['Flutter', 'Audio', 'UI/UX']
-              },
-              { 
-                title: 'Attendance App', 
-                icon: <FaQrcode className="text-6xl" />,
-                description: 'Smart QR code-based attendance system using SQLite that reduced manual tracking time by 70%. Successfully tested in a class of 50+ students.',
-                tags: ['Flutter', 'SQLite', 'QR']
-              }
-            ].map((project, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                <div className="bg-gradient-to-r from-secondary to-accent h-48 flex items-center justify-center text-white">
-                  {project.icon}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-6">{project.description}</p>
-                  <div className="flex justify-between border-t border-gray-100 pt-4">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="text-accent font-semibold text-sm uppercase tracking-wider">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+<div className="flex flex-wrap justify-center gap-8">
+  {[
+    { 
+      title: 'Restaurant Reviews App', 
+      icon: <FaUtensils className="text-6xl" />,
+      description: 'Cross-platform app using Flutter with Google Gemini, Firebase, Google Maps, and custom ML model achieving 95% accuracy in personalized recommendations. Ranked top 5 among 30+ final-year projects.',
+      tags: ['Flutter', 'Firebase', 'ML']
+    },
+    { 
+      title: 'Fitness Application', 
+      icon: <FaDumbbell className="text-6xl" />,
+      description: 'Fitness tracking app with real-time data visualization and goal tracking. Achieved 30% increase in daily user engagement during testing with focus groups.',
+      tags: ['Flutter', 'Data Viz', 'Tracking']
+    },
+    { 
+      title: 'Voice Recorder App', 
+      icon: <FaMicrophone className="text-6xl" />,
+      description: 'Lightweight and user-friendly voice recording application with playback and file organization features. Achieved 100+ downloads within the first month.',
+      tags: ['Flutter', 'Audio', 'UI/UX']
+    },
+    { 
+      title: 'Attendance App', 
+      icon: <FaQrcode className="text-6xl" />,
+      description: 'Smart QR code-based attendance system using SQLite that reduced manual tracking time by 70%. Successfully tested in a class of 50+ students.',
+      tags: ['Flutter', 'SQLite', 'QR']
+    }
+  ].map((project, index) => (
+    <div key={index} className="w-full md:w-[45%] lg:w-[40%] xl:w-[30%] bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+      <div className="bg-gradient-to-r from-secondary to-accent h-48 flex items-center justify-center text-white">
+        {project.icon}
+      </div>
+      <div className="p-6">
+        <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+        <p className="text-gray-600 mb-6">{project.description}</p>
+        <div className="flex justify-between border-t border-gray-100 pt-4">
+          {project.tags.map((tag, tagIndex) => (
+            <span key={tagIndex} className="text-accent font-semibold text-sm uppercase tracking-wider">
+              {tag}
+            </span>
+          ))}
         </div>
-      </section>
+      </div>
+    </div>
+  ))}
+</div>
 
       {/* Skills Section - Centered Layout */}
       <section ref={sectionRefs.skills} id="skills" className="py-16 md:py-24 bg-primary text-light">
