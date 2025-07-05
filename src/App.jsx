@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { FaBars, FaTimes, FaLaptopCode, FaUtensils, FaDumbbell, FaMicrophone, FaQrcode, FaEnvelope, FaPhone, FaLinkedinIn, FaGithub, FaBehance, FaUserTie } from 'react-icons/fa';
+import { FaBars, FaTimes, FaLaptopCode, FaUtensils, FaDumbbell, FaMicrophone, FaQrcode, FaEnvelope, FaPhone, FaLinkedinIn, FaGithub, FaBehance, FaUserTie, FaGraduationCap } from 'react-icons/fa';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -200,10 +200,10 @@ const App = () => {
       <section ref={sectionRefs.work} id="work" className="py-16 md:py-24 bg-light">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-           <h2 className="section-title text-3xl md:text-4xl font-bold text-center mb-16 relative pb-4">
-            Feature Work
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-secondary to-accent rounded-full"></span>
-          </h2>
+            <h2 className="section-title text-3xl md:text-4xl font-bold mb-4 relative pb-4">
+              Featured Work
+              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-secondary to-accent rounded-full"></span>
+            </h2>
             <p className="text-xl text-secondary">
               Explore my portfolio of mobile applications built with Flutter that showcase my technical skills and creative problem-solving abilities
             </p>
@@ -257,29 +257,23 @@ const App = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills Section - Centered Layout */}
       <section ref={sectionRefs.skills} id="skills" className="py-16 md:py-24 bg-primary text-light">
         <div className="container mx-auto px-4 md:px-8">
           <h2 className="section-title text-3xl md:text-4xl font-bold text-center mb-16 relative pb-4">
             Technical Expertise
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-secondary to-accent rounded-full"></span>
           </h2>
-          {/* Slider Bar Under Title */}
-          <div className="w-full flex justify-center mb-12">
-            <div className="h-2 w-64 bg-gradient-to-r from-secondary to-accent rounded-full shadow-lg"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Technical Skills Row */}
-            <div className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Development Skills */}
-              <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm flex flex-col justify-between">
-                <h3 className="text-2xl font-bold mb-6 relative pb-2">
-                  Development Skills
-                  <span className="absolute bottom-0 left-0 w-12 h-1 bg-accent rounded-full"></span>
-                </h3>
-                {/* Slider Bar Under Development Skills */}
-                <div className="w-full flex justify-center mb-8">
-                  <div className="h-2 w-40 bg-gradient-to-r from-secondary to-accent rounded-full shadow-lg"></div>
+              <div className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="bg-gradient-to-br from-secondary to-accent w-12 h-12 rounded-lg flex items-center justify-center text-white mr-4">
+                    <FaLaptopCode className="text-xl" />
+                  </div>
+                  <h3 className="text-2xl font-bold">Development Skills</h3>
                 </div>
                 <div className="space-y-6">
                   {[
@@ -291,12 +285,13 @@ const App = () => {
                   ].map((skill, index) => (
                     <div key={index}>
                       <div className="flex justify-between mb-2">
-                        <span>{skill.name}</span>
-                        <span className="text-gold">{skill.percent}%</span>
+                        <span className="font-medium">{skill.name}</span>
+                        <span className="text-gold font-bold">{skill.percent}%</span>
                       </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-purple-500 rounded-full opacity-30"></div>
                         <div 
-                          className="skill-progress h-full bg-gradient-to-r from-secondary to-accent rounded-full"
+                          className="skill-progress h-full bg-gradient-to-r from-purple-600 to-purple-300 rounded-full"
                           data-width={`${skill.percent}%`}
                           style={{ width: '0%' }}
                         ></div>
@@ -305,12 +300,15 @@ const App = () => {
                   ))}
                 </div>
               </div>
+              
               {/* Tools & Technologies */}
-              <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm flex flex-col justify-between">
-                <h3 className="text-2xl font-bold mb-6 relative pb-2">
-                  Tools & Technologies
-                  <span className="absolute bottom-0 left-0 w-12 h-1 bg-accent rounded-full"></span>
-                </h3>
+              <div className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="bg-gradient-to-br from-secondary to-accent w-12 h-12 rounded-lg flex items-center justify-center text-white mr-4">
+                    <FaGithub className="text-xl" />
+                  </div>
+                  <h3 className="text-2xl font-bold">Tools & Technologies</h3>
+                </div>
                 <div className="space-y-6">
                   {[
                     { name: 'Git & GitHub', percent: 90 },
@@ -321,12 +319,13 @@ const App = () => {
                   ].map((skill, index) => (
                     <div key={index}>
                       <div className="flex justify-between mb-2">
-                        <span>{skill.name}</span>
-                        <span className="text-gold">{skill.percent}%</span>
+                        <span className="font-medium">{skill.name}</span>
+                        <span className="text-gold font-bold">{skill.percent}%</span>
                       </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-500 rounded-full opacity-30"></div>
                         <div 
-                          className="skill-progress h-full bg-gradient-to-r from-secondary to-accent rounded-full"
+                          className="skill-progress h-full bg-gradient-to-r from-blue-600 to-blue-300 rounded-full"
                           data-width={`${skill.percent}%`}
                           style={{ width: '0%' }}
                         ></div>
@@ -335,26 +334,42 @@ const App = () => {
                   ))}
                 </div>
               </div>
-            </div>
-            {/* Education & Courses Full Width Under Skills */}
-            <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm md:col-span-2 mt-8">
-              <h3 className="text-2xl font-bold mb-6 relative pb-2">
-                Education & Courses
-                <span className="absolute bottom-0 left-0 w-12 h-1 bg-accent rounded-full"></span>
-              </h3>
-              <div className="space-y-8">
-                <div>
-                  <h4 className="text-xl font-bold mb-2">Bachelor's in Computer Science</h4>
-                  <p className="opacity-80">Shorouk Academy | Graduation: 2025</p>
+              
+              {/* Education & Courses */}
+              <div className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="flex items-center mb-6">
+                  <div className="bg-gradient-to-br from-secondary to-accent w-12 h-12 rounded-lg flex items-center justify-center text-white mr-4">
+                    <FaGraduationCap className="text-xl" />
+                  </div>
+                  <h3 className="text-2xl font-bold">Education & Courses</h3>
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-3">Relevant Courses</h4>
-                  <ul className="space-y-2 opacity-80">
-                    <li>Flutter Development (Udemy)</li>
-                    <li>Advanced AI Integration</li>
-                    <li>Machine Learning Fundamentals</li>
-                    <li>English Language</li>
-                  </ul>
+                <div className="space-y-8">
+                  <div className="bg-white/5 p-6 rounded-xl border border-white/10">
+                    <h4 className="text-xl font-bold mb-2 text-accent">Bachelor's in Computer Science</h4>
+                    <p className="opacity-90">Shorouk Academy | Graduation: 2025</p>
+                  </div>
+                  
+                  <div className="bg-white/5 p-6 rounded-xl border border-white/10">
+                    <h4 className="text-xl font-bold mb-3 text-accent">Relevant Courses</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-center">
+                        <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                        <span className="opacity-90">Flutter Development (Udemy)</span>
+                      </li>
+                      <li className="flex items-center">
+                        <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                        <span className="opacity-90">Advanced AI Integration</span>
+                      </li>
+                      <li className="flex items-center">
+                        <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                        <span className="opacity-90">Machine Learning Fundamentals</span>
+                      </li>
+                      <li className="flex items-center">
+                        <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                        <span className="opacity-90">English Language</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -421,6 +436,21 @@ const App = () => {
           <p>&copy; {new Date().getFullYear()} Kyrillos Zakhary. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* CSS for progress bar animation */}
+      <style jsx global>{`
+        .skill-progress {
+          transition: width 1.5s ease-out;
+        }
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0px); }
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 };
