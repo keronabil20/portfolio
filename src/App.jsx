@@ -197,7 +197,7 @@ const App = () => {
       </section>
 
       {/* Projects Section */}
-      <section ref={sectionRefs.work} id="work" className="py-16 md:py-24 bg-gradient-to-b from-light to-indigo-50">
+      <section ref={sectionRefs.work} id="work" className="py-16 md:py-24 bg-light">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="section-title text-3xl md:text-4xl font-bold mb-4 relative pb-4">
@@ -269,83 +269,84 @@ const App = () => {
             <div className="h-2 w-64 bg-gradient-to-r from-secondary to-accent rounded-full shadow-lg"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm flex flex-col justify-between">
-              <h3 className="text-2xl font-bold mb-6 relative pb-2">
-                Development Skills
-                <span className="absolute bottom-0 left-0 w-12 h-1 bg-accent rounded-full"></span>
-              </h3>
-              {/* Slider Bar Under Development Skills */}
-              <div className="w-full flex justify-center mb-8">
-                <div className="h-2 w-40 bg-gradient-to-r from-secondary to-accent rounded-full shadow-lg"></div>
+            {/* Technical Skills Row */}
+            <div className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Development Skills */}
+              <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm flex flex-col justify-between">
+                <h3 className="text-2xl font-bold mb-6 relative pb-2">
+                  Development Skills
+                  <span className="absolute bottom-0 left-0 w-12 h-1 bg-accent rounded-full"></span>
+                </h3>
+                {/* Slider Bar Under Development Skills */}
+                <div className="w-full flex justify-center mb-8">
+                  <div className="h-2 w-40 bg-gradient-to-r from-secondary to-accent rounded-full shadow-lg"></div>
+                </div>
+                <div className="space-y-6">
+                  {[
+                    { name: 'Flutter Development', percent: 95 },
+                    { name: 'Firebase', percent: 90 },
+                    { name: 'RESTful APIs', percent: 92 },
+                    { name: 'State Management', percent: 88 },
+                    { name: 'UI/UX Design', percent: 85 }
+                  ].map((skill, index) => (
+                    <div key={index}>
+                      <div className="flex justify-between mb-2">
+                        <span>{skill.name}</span>
+                        <span className="text-gold">{skill.percent}%</span>
+                      </div>
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div 
+                          className="skill-progress h-full bg-gradient-to-r from-secondary to-accent rounded-full"
+                          data-width={`${skill.percent}%`}
+                          style={{ width: '0%' }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="space-y-6">
-                {[
-                  { name: 'Flutter Development', percent: 95 },
-                  { name: 'Firebase', percent: 90 },
-                  { name: 'RESTful APIs', percent: 92 },
-                  { name: 'State Management', percent: 88 },
-                  { name: 'UI/UX Design', percent: 85 }
-                ].map((skill, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between mb-2">
-                      <span>{skill.name}</span>
-                      <span className="text-gold">{skill.percent}%</span>
+              {/* Tools & Technologies */}
+              <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm flex flex-col justify-between">
+                <h3 className="text-2xl font-bold mb-6 relative pb-2">
+                  Tools & Technologies
+                  <span className="absolute bottom-0 left-0 w-12 h-1 bg-accent rounded-full"></span>
+                </h3>
+                <div className="space-y-6">
+                  {[
+                    { name: 'Git & GitHub', percent: 90 },
+                    { name: 'Android Studio', percent: 88 },
+                    { name: 'VS Code', percent: 92 },
+                    { name: 'Figma', percent: 87 },
+                    { name: 'SQL Databases', percent: 85 }
+                  ].map((skill, index) => (
+                    <div key={index}>
+                      <div className="flex justify-between mb-2">
+                        <span>{skill.name}</span>
+                        <span className="text-gold">{skill.percent}%</span>
+                      </div>
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div 
+                          className="skill-progress h-full bg-gradient-to-r from-secondary to-accent rounded-full"
+                          data-width={`${skill.percent}%`}
+                          style={{ width: '0%' }}
+                        ></div>
+                      </div>
                     </div>
-                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                      <div 
-                        className="skill-progress h-full bg-gradient-to-r from-secondary to-accent rounded-full"
-                        data-width={`${skill.percent}%`}
-                        style={{ width: '0%' }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
-            
-            <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold mb-6 relative pb-2">
-                Tools & Technologies
-                <span className="absolute bottom-0 left-0 w-12 h-1 bg-accent rounded-full"></span>
-              </h3>
-              
-              <div className="space-y-6">
-                {[
-                  { name: 'Git & GitHub', percent: 90 },
-                  { name: 'Android Studio', percent: 88 },
-                  { name: 'VS Code', percent: 92 },
-                  { name: 'Figma', percent: 87 },
-                  { name: 'SQL Databases', percent: 85 }
-                ].map((skill, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between mb-2">
-                      <span>{skill.name}</span>
-                      <span className="text-gold">{skill.percent}%</span>
-                    </div>
-                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                      <div 
-                        className="skill-progress h-full bg-gradient-to-r from-secondary to-accent rounded-full"
-                        data-width={`${skill.percent}%`}
-                        style={{ width: '0%' }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm">
+            {/* Education & Courses Full Width Under Skills */}
+            <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm md:col-span-2 mt-8">
               <h3 className="text-2xl font-bold mb-6 relative pb-2">
                 Education & Courses
                 <span className="absolute bottom-0 left-0 w-12 h-1 bg-accent rounded-full"></span>
               </h3>
-              
               <div className="space-y-8">
                 <div>
                   <h4 className="text-xl font-bold mb-2">Bachelor's in Computer Science</h4>
                   <p className="opacity-80">Shorouk Academy | Graduation: 2025</p>
                 </div>
-                
                 <div>
                   <h4 className="text-xl font-bold mb-3">Relevant Courses</h4>
                   <ul className="space-y-2 opacity-80">
