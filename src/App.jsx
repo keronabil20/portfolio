@@ -257,19 +257,17 @@ const App = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills Section - Updated with sliding progress bars */}
       <section ref={sectionRefs.skills} id="skills" className="py-16 md:py-24 bg-primary text-light">
         <div className="container mx-auto px-4 md:px-8">
           <h2 className="section-title text-3xl md:text-4xl font-bold text-center mb-16 relative pb-4">
             Technical Expertise
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-secondary to-accent rounded-full"></span>
           </h2>
-          {/* Slider Bar Under Title */}
           <div className="w-full flex justify-center mb-12">
             <div className="h-2 w-64 bg-gradient-to-r from-secondary to-accent rounded-full shadow-lg"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Technical Skills Row */}
             <div className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Development Skills */}
               <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm flex flex-col justify-between">
@@ -277,7 +275,6 @@ const App = () => {
                   Development Skills
                   <span className="absolute bottom-0 left-0 w-12 h-1 bg-accent rounded-full"></span>
                 </h3>
-                {/* Slider Bar Under Development Skills */}
                 <div className="w-full flex justify-center mb-8">
                   <div className="h-2 w-40 bg-gradient-to-r from-secondary to-accent rounded-full shadow-lg"></div>
                 </div>
@@ -294,9 +291,13 @@ const App = () => {
                         <span>{skill.name}</span>
                         <span className="text-gold">{skill.percent}%</span>
                       </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      {/* Progress bar container */}
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden relative">
+                        {/* Background layer */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-purple-500 rounded-full opacity-30"></div>
+                        {/* Animated progress bar */}
                         <div 
-                          className="skill-progress h-full bg-gradient-to-r from-secondary to-accent rounded-full"
+                          className="skill-progress h-full bg-gradient-to-r from-purple-600 to-purple-300 rounded-full transition-all duration-1000 ease-out"
                           data-width={`${skill.percent}%`}
                           style={{ width: '0%' }}
                         ></div>
@@ -324,9 +325,13 @@ const App = () => {
                         <span>{skill.name}</span>
                         <span className="text-gold">{skill.percent}%</span>
                       </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      {/* Progress bar container */}
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden relative">
+                        {/* Background layer */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-purple-500 rounded-full opacity-30"></div>
+                        {/* Animated progress bar */}
                         <div 
-                          className="skill-progress h-full bg-gradient-to-r from-secondary to-accent rounded-full"
+                          className="skill-progress h-full bg-gradient-to-r from-purple-600 to-purple-300 rounded-full transition-all duration-1000 ease-out"
                           data-width={`${skill.percent}%`}
                           style={{ width: '0%' }}
                         ></div>
@@ -336,7 +341,7 @@ const App = () => {
                 </div>
               </div>
             </div>
-            {/* Education & Courses Full Width Under Skills */}
+            {/* Education & Courses */}
             <div className="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm md:col-span-2 mt-8">
               <h3 className="text-2xl font-bold mb-6 relative pb-2">
                 Education & Courses
@@ -421,6 +426,13 @@ const App = () => {
           <p>&copy; {new Date().getFullYear()} Kyrillos Zakhary. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* CSS for progress bar animation */}
+      <style jsx global>{`
+        .skill-progress {
+          transition: width 1.5s ease-out;
+        }
+      `}</style>
     </div>
   );
 };
