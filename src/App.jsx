@@ -164,9 +164,9 @@ const App = () => {
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="relative">
               <h3 className="text-2xl md:text-3xl font-bold mb-6">Driven Flutter Developer</h3>
-              <div className="space-y-4 text-lg">
+              <div className="space-y-4 text-lg mb-8">
                 <p>
                   I specialize in developing high-quality mobile applications using Flutter, with a proven track 
                   record of improving development efficiency by 25% through advanced application maintenance techniques.
@@ -181,8 +181,9 @@ const App = () => {
                   I deliver user-focused mobile solutions that exceed expectations.
                 </p>
               </div>
+              <div className="flex items-center space-x-4 mt-6">
                 <div className="text-2xl font-bold inline-block">Kyrillos Zakhary</div>
-                <div className="absolute right-0 top-1/2 w-24 h-0.5 bg-accent transform -translate-y-1/2"></div>
+                <div className="w-24 h-0.5 bg-accent"></div>
               </div>
             </div>
             
