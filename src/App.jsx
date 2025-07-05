@@ -183,7 +183,6 @@ const App = () => {
               </div>
               <div className="mt-8 text-right relative pr-10">
                 <div className="text-2xl font-bold inline-block">Kyrillos Zakhary</div>
-                <div className="absolute right-0 top-1/2 w-24 h-0.5 bg-accent transform -translate-y-1/2"></div>
               </div>
             </div>
             
@@ -196,14 +195,15 @@ const App = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Section - Updated with centered header */}
       <section ref={sectionRefs.work} id="work" className="py-16 md:py-24 bg-light">
         <div className="container mx-auto px-4 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative pb-4">
+            Featured Work
+            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-secondary to-accent rounded-full"></span>
+          </h2>
+          
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="section-title text-3xl md:text-4xl font-bold mb-4 relative pb-4">
-              Featured Work
-              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-secondary to-accent rounded-full"></span>
-            </h2>
             <p className="text-xl text-secondary">
               Explore my portfolio of mobile applications built with Flutter that showcase my technical skills and creative problem-solving abilities
             </p>
@@ -257,10 +257,10 @@ const App = () => {
         </div>
       </section>
 
-      {/* Skills Section - Centered Layout */}
+      {/* Skills Section */}
       <section ref={sectionRefs.skills} id="skills" className="py-16 md:py-24 bg-primary text-light">
         <div className="container mx-auto px-4 md:px-8">
-          <h2 className="section-title text-3xl md:text-4xl font-bold text-center mb-16 relative pb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative pb-4">
             Technical Expertise
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-secondary to-accent rounded-full"></span>
           </h2>
@@ -377,10 +377,10 @@ const App = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Section - Updated with centered header */}
       <section ref={sectionRefs.contact} id="contact" className="py-16 md:py-24 bg-light">
         <div className="container mx-auto px-4 md:px-8">
-          <h2 className="section-title text-3xl md:text-4xl font-bold text-center mb-16 relative pb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative pb-4">
             Get In Touch
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-secondary to-accent rounded-full"></span>
           </h2>
