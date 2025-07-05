@@ -205,7 +205,7 @@ const App = () => {
           
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="text-xl text-secondary">
-              Explore my portfolio of mobile applications built with Flutter that showcase my technical skills and creative problem-solving abilities
+              Discover my portfolio of innovative Flutter applications, where cutting-edge technology meets creative problem-solving to deliver seamless and impactful mobile experiences.
             </p>
           </div>
           
