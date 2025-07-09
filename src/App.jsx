@@ -214,7 +214,7 @@ const App = () => {
               { 
                 title: 'Restaurant Reviews App', 
                 icon: <FaUtensils className="text-6xl" />,
-                description: 'Cross-platform app using Flutter with Google Gemini, Firebase, Google Maps, and custom ML model achieving 95% accuracy in personalized recommendations. Ranked top 5 among 30+ final-year projects.',
+                description: 'Cross-platform app using Flutter with Google Gemini, Firebase, Google Maps, and custom ML model achieving 95% accuracy in personalized recommendations.',
                 tags: ['Flutter', 'Firebase', 'ML']
               },
               { 
@@ -354,11 +354,7 @@ const App = () => {
                     <ul className="space-y-3">
                       <li className="flex items-center">
                         <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
-                        <span className="opacity-90">Flutter Development (Udemy)</span>
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
-                        <span className="opacity-90">Advanced AI Integration</span>
+                        <span className="opacity-90">Flutter Development </span>
                       </li>
                       <li className="flex items-center">
                         <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
